@@ -6,6 +6,7 @@ const generateMarkdown = require ('./utils/generateMarkdown');
 
 const writeFileAsync = utility.promisify(fs.writeFile);
 
+const promptUser = () => {
 inquirer.prompt([
         {
             type: 'input',
@@ -21,8 +22,8 @@ inquirer.prompt([
             type: "type",
             message: "what is your github username?",
             name: "github",
-    }
-]).then((response) => {
+        }
+])}.then((response) => {
 const htmlTemplate = `<!DOCTYPE html>
 <html>
     <head>

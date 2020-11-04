@@ -4,25 +4,30 @@ const utility = require("util");
 
 const generateMarkdown = require ('./utils/generateMarkdown');
 
-const writeFileAsync = utility.promisify(fs.writeFile);
+// const writeFileAsync = utility.promisify(fs.writeFile);
 
 const promptUser = () => {
-inquirer.prompt([
+return inquirer.prompt([
         {
             type: 'input',
-            message: "what is your name?",
-            name: 'name'
+            message: "what is the title of your project?",
+            name: 'title',
         },
         {
             type: "input",
-            message: "where do you live?",
-            name: "location",
+            message: "what is the name of your github repo?",
+            name: "GITHUB REPO",
         },
         {
-            type: "type",
-            message: "what is your github username?",
-            name: "github",
-        }
+            type: "input",
+            message: "What is the description of your project?",
+            name: "description",
+        },
+        {
+            type: "input",
+            message: "What is your Homepage Project?",
+            name: "homepage",
+        },
 ])
 // .then((response) => {
 // const htmlTemplate = `<!DOCTYPE html>
@@ -51,18 +56,18 @@ inquirer.prompt([
 // fs.writeFile(fileName,htmlTemplate, (err) => err ? console.log(err) : console.log("success"));
 // // writeFileAsync(fileName, htmlTemplate).then(()=> console.log("success")).catch(error => console.log(error));
 // });
-
-const init = async () => {
-    try {
-        const answers = await promptUser();
-
-        const mdFile = generateMarkdown(answers);
-
-        await writeFileAsync('./demo/README-demo.md', mdFile);
-
-        console.log('Successfully wrote to ReadMe');
-    } catch (err) {
-        console.log(err);
-    }
-}
+        .then(function (data) {
+            console.log(data);
+            writeMarkdown(markDown, data)
+        });
 };
+
+function writeMarkdown(markDown, data) {
+    fs.writeFile(markDown, generateMarkdown(data), null, function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Successfully wrote ReadMe!")
+    });
+};
+promptUser();

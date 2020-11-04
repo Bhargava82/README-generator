@@ -1,9 +1,9 @@
-# README generator
+# README Generator
 
   Table of Contents
-  * [Description]user can generate a professional readme file
+  * [Description]User can create a good README using the code
   * [Github Repository]bhargava82/readme-generator
-  * [Homepage Project]prework about me
+  * [Homepage Project]my first repo
   * [Project Author]Bhargava Patel
   * [Installation]node.js
   * [Usage]node.js
@@ -17,4 +17,7 @@
 You can quickly and easily create a README file by using a command-line application to generate one. This allows the project creator to devote more time to working on the project.
 
 The task was to create a command-line application that dynamically generates a professional README.md file from a user's input using the [Inquirer package](https://www.npmjs.com/package/inquirer). 
+
+![badge](https://img.shields.io/badge/MIT-License-<color>)
+  MIT
 

@@ -16,7 +16,7 @@ return inquirer.prompt([
         {
             type: "input",
             message: "what is the name of your github repo?",
-            name: "GITHUB REPO",
+            name: "githubRepo",
         },
         {
             type: "input",
@@ -58,12 +58,12 @@ return inquirer.prompt([
 // });
         .then(function (data) {
             console.log(data);
-            writeMarkdown(markDown, data)
+            writeMarkdown(data)
         });
 };
 
-function writeMarkdown(markDown, data) {
-    fs.writeFile(markDown, generateMarkdown(data), null, function (err) {
+function writeMarkdown(data) {
+    fs.writeFile("README.md", generateMarkdown(data), null, function (err) {
         if (err) {
             return console.log(err);
         }

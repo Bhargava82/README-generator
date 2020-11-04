@@ -3,8 +3,8 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
   Table of Contents
-  * [Description]
-  *
+  * [Description]${data.description}
+  * [Github Repository]${data.githubRepo}
 `;
 }
 

@@ -28,6 +28,37 @@ return inquirer.prompt([
             message: "What is your Homepage Project?",
             name: "homepage",
         },
+        {
+            type: "input",
+            message: "Who is the author of the project?",
+            name: "author",
+        },
+        {
+            type: "input",
+            message: "Describe the steps for installation?",
+            name: "installation",
+        },
+        {
+            type: "input",
+            message: "Describe the steps for usage",
+            name: "usage",
+        },
+        {
+            type: "input",
+            message: "Who are the contributors to this project?",
+            name: "contributors",
+        },
+        {
+            type: "list",
+            message: "What is the license name?",
+            name: "license",
+            choices: ["MIT", "Mozilla Public License"],
+        },
+        {
+            input: "input",
+            message: "What is your email?",
+            name: "email",
+        },
 ])
 // .then((response) => {
 // const htmlTemplate = `<!DOCTYPE html>
